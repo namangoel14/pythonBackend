@@ -1,0 +1,179 @@
+## Dictionary and sets
+#
+#marks = {
+#        "naman": 100,
+#        "sky": 91,
+#        "roy": 30,
+#        "mark": [22, 55, 78],
+#        98: "laura"
+#        }
+##print(marks["mark"])
+#
+##Methods of dictionary
+#
+## 1. .items()
+#print(marks.items())
+#
+## 2. .keys()
+#print(marks.keys())
+#
+## Adding new key: value pair
+#marks["Aditya"] = 70
+#print(marks)
+#
+## 3. .values()
+#print(marks.values())
+#
+## 4. .get()
+#print("marks['Aditya']:",marks.get("Aditya"))
+#
+## 5. .update()
+#marks.update({"roy": 50, "renuka": 76})
+#print(marks[98])
+#
+## 6. pop()
+#marks.pop(98)
+#print(marks)
+#
+## 7. popitem()
+#
+#print("popitem():",marks.popitem())
+#print(marks)
+#
+#
+## NOTE: The differences between marks.get("key") and marks["key"] :-
+#
+## 1. marks.get("key") -> it will return none it the key doesn't exists. 
+## 2. marks["key"] -> It will throw an error if the key doesn't exists.
+#
+#
+#
+## SETS in python
+#
+#s1 = {"apple", 2, 5.1, False, 'Road'}
+#print(type(s1))
+#
+#print("Length of the set(s):", len(s1))
+#
+#print(s1)
+#
+## set constructor
+#
+#s = set(("apple", 2, 5.1, False, True, 'Road'))
+#print(s)
+#
+#
+#seta = {1, 2, 3}
+#setb = {3, 4, 5}
+#
+#print(seta | setb)  # Union
+#print(seta & setb)  # Intersection
+#print(seta - setb)  # Difference
+#
+#
+#s4 = set()
+#print(s4)
+#
+#s2 = set({"roy": 50, "renuka": 76})
+#print(s2)
+#
+## sets method
+#
+## 1. .remove()
+#
+#s1.remove(2)
+#print(s1)
+#
+## 2. .pop() - It removes any random element from the set  but if it doesn't found the element in the set it will throw the error
+#
+#print(s1.pop())
+#
+#print("pop:",s1)
+#
+## 3. .remove()
+#
+##s1.remove(True)
+##print("remove:",s1)
+#
+## 4. discard() - it remove the element but if it doesn't found the element in the set it will not throw the error
+#
+#s1.discard(True)
+#print("Discard:",s1)
+#
+## 5. clear()
+#
+##s1.clear()
+##print("Clear: ",s1)
+#
+## 6. union()
+#
+#print("Union: ",s1.union({8, 11}))
+#
+## 7. intersection()
+#print(s1)
+#print("Intersection:", s1.intersection({11, 5.1}))
+#
+## 8. .add()
+#print(s1)
+#s1.add(566)
+#print("Added:",s1)
+#
+#A = {1, 2}
+#B = {1, 2, 3}
+#
+#print("subset: ", A.issubset(B))
+#print("SuperSet: ", B.issuperset(A))
+
+
+# Practice set questions
+
+# 1. Write a program to create a dictionary of Hindi words with values as their English translation. Provide user with an option to look it up!
+
+translate = {
+        "happy": "Khushi",
+        "Angry": "Gussa",
+        "Smile": "Hasi",
+        "Enjoy": "Mazze"
+        }
+print("What is the translation of Happy in hindi?\n", translate["happy"])
+
+
+# 2. Write a program to input eight numbers from the user and display all the unique numbers (once).
+
+#num1 = {int(input("Enter the number1:"))}
+#num2 = {int(input("Enter the number2:"))}
+#num3 = {int(input("Enter the number3:"))}
+#num4 = {int(input("Enter the number4:"))}
+#num5 = {int(input("Enter the number5:"))}
+#num6 = {int(input("Enter the number6:"))}
+#num7 = {int(input("Enter the number7:"))}
+#num8 = {int(input("Enter the number8:"))}
+
+#userInputs = num1 | num2 | num3 | num4 | num5 | num6 | num7 | num8
+
+#print("userInputs:", userInputs)
+
+# 3. Can we have a set with 18 (int) and '18' (str) as a value in it?
+
+#s1 = {int(input("Enter a int value:"))}
+#s2 = {input("Enter a string:")}
+#s3 = s1 | s2
+#print("String and integer value in a set: ",s3)
+
+
+# 4. What will be the length of following set s:
+'''
+s = set()
+s.add(20)
+s.add(20.0)
+s.add('20') # length of s after these operations?
+'''
+s = set()
+s.add(int(20))
+s.add(float(20.0))
+s.add('20')
+
+print(s)
+print("Length of s:", len(s))
+
+
