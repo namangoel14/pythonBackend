@@ -1,0 +1,3 @@
+Hey! I am Naman Goel
+Currently I have an experience of 5 years in full stack engineering.
+In Backend I know python and frameworks like FastAPI and Flask.

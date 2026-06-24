@@ -1,0 +1,91 @@
+# 1. Write a program to read the text from a given file ‘poems.txt’ and find out whether it contains the word ‘twinkle’.
+'''
+with open("poems.txt") as file:
+    data = file.read()
+    text = "".join(data)
+    print("text:",text)
+    if type(data) == str:
+        if "twinkle" in data:
+            print("Yes, the word twinkle present inside the data")
+            print(data)
+        else:
+            print("No, the word twinkle is not present inside the data")
+            print(data)
+'''
+
+# 2. The game() function in a program lets a user play a game and returns the score as an integer. You need to read a file ‘Hi-score.txt’ which is either blank or contains the previou Hi-score. You need to write a program to update the Hi-score whenever the game() function breaks the Hi-score.
+
+'''
+import random
+
+totalRun = 0
+
+run = 0
+
+runList = [0, 1, 2, 3, 4, 6]
+print("You have got 1 over (6 balls) to play!")
+while (run < 6):
+    user = int(input(f"Score a run\nBall {run+1}:"))
+    comp = random.choice(runList)
+    print("Comp:",comp)
+
+    if user in runList:
+        if comp != user:
+            totalRun += user
+        else:
+            print("You are Out!")
+            break
+    else:
+        print("Invalid Score")
+
+    run +=1
+
+with open("Hi-score.txt", "r+") as file:
+    score = int(file.read().strip())
+    print("score:",score)
+    if score > totalRun:
+        print("Your Highest score is:", score)
+        print("Your current score:",totalRun)
+        file.seek(0)
+        file.write(str(score))
+    elif score < totalRun:
+        print("Your Highest score is:", totalRun)
+        print("Your current score:",totalRun)
+        file.seek(0)
+        file.write(str(totalRun))
+    elif score == totalRun:
+        print("Your current score is same as Highest score:",totalRun)
+
+'''
+
+# 3. Write a program to generate multiplication tables from 2 to 20 and write it to the different files. Place these files in a folder for a 13-year-old.
+
+'''
+import os
+num = 2
+if os.path.exists("tableFrom2_to_20"):
+    os.system("rm tableFrom2_to_20/tableOf*")
+    pass
+elif os.path.exists("tableFrom2_to_20") == False: 
+    os.system("mkdir tableFrom2_to_20")
+
+while num <= 20:
+    tableNum = 1
+    while tableNum < 11:
+        table = f"{num} * {tableNum} = {num * tableNum}\n"
+        if tableNum < 11:
+            with open(f"tableFrom2_to_20/tableOf{num}.txt","a") as file:
+                file.write(table)
+        
+        tableNum +=1
+    num +=1
+'''
+
+# 4. A file contains a word “Donkey” multiple times. You need to write a program which replaces this word with ##### by updating the same file.
+num = 1
+with open("word.txt", "r+") as file:
+    word = file.read()
+    print(word)
+    if word == "Donkey":
+        replace = str(word).replace("Donkey","#####")
+        file.write(replace)
